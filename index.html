@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream House Aframe Project</title>
+    <script src="scripts/aframe.js"></script>
+</head>
+<body>
+    <a-scene>
+
+            <!-- Download and move your 3D models to the ASSETS folder -->
+            <!-- Asset Management Systems -->
+            <!-- Graphics Library Transmission Format -->
+
+            <a-assets>
+                <img src="textures/floor-1024.jpg" alt="" id="floor">
+                <!-- <img src="textures/floor-1024-NRM.jpg" alt="" id="floor-NRM"> -->
+                <img src="textures/clear-sunny-sky.jpg" alt="" id="clear-sunny-sky">
+                <a-asset-item id="villa" src="models/scene.gltf"></a-asset-item> 
+            </a-assets> 
+
+            <!-- Sky -->
+            <a-sky src="#clear-sunny-sky" rotation="0 30 0"></a-sky>
+            <!-- Foundation Ground (lowered slightly to avoid clipping with pool) -->
+            <a-plane color="#ffffff" src="#floor" repeat="600 600" rotation="-90 0 0" position="0 -0.2 0" scale="10000 10000 1" ></a-plane>
+
+             <!-- My Dream villa -->
+            <a-entity gltf-model="#villa"></a-entity>
+
+            <!-- Free roaming camera -->
+            <!-- <a-entity id="player" position="0 1.6 5" movement-controls="fly: true">
+            <a-camera wasd-controls-enabled="true" look-controls="pointerLockEnabled: true"></a-camera></a-entity> -->
+
+
+
+            <!-- Pool Surface -->
+            <a-plane position="-7.5 0.05 -20" rotation="-90 30 15" width="8.5" height="5" color="#3dc7f5" material="opacity: 0.7; transparent: true; roughness: 0.1; metalness: 0.3"></a-plane>
+
+            <a-water
+            opacity=".7"
+            scale="1.8 4.6 4"
+            color="skyblue"
+            rotation="-90 0 0"
+            position="40.25 0.3 -47"
+          >
+          </a-water>
+
+            <!-- Free roaming camera -->
+            <!-- <a-entity 
+             id="player" position="0 1.6 5" movement-controls="fly: true; speed: 0.2"> -->
+
+             <a-entity position="60 30 100">
+                <a-camera position=""></a-camera>
+            </a-entity>
+            <!-- Swimming Pool Model -->
+               
+                
+
+            <a-camera wasd-controls-enabled="true" look-controls="pointerLockEnabled: true"></a-camera>
+            </a-entity>
+</a-scene>
+</body>
+</html>
